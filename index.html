@@ -17,7 +17,7 @@
       
       //middleware
       var SMW1 = function({ payload, next, integrations }) {
-        payload.obj.pageTitle = 'test';
+        payload.obj.properties.testProperty = '***test***';
         next(payload);
       };
       
