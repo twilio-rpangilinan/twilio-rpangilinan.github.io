@@ -17,7 +17,7 @@
       
       //middleware
       var SMW1 = function({ payload, next, integrations }) {
-        if (payload.obj.type == 'track') {
+        if (payload.obj.type == 'track' || payload.obj.type == 'page') {
             payload.obj.properties.testProperty = '***test***';
         }
         next(payload);
