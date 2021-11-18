@@ -13,7 +13,10 @@
     <!-- Optimizely -->
     <script src="scripts/require.js"></script>
     <script>
-        window.optimizelyClientInstance = require("@optimizely/optimizely-sdk");
+        window.optimizelyClientInstance = require("[@optimizely/optimizely-sdk]", function (foo) {
+            alert("it's now loaded");        
+        });
+        
     </script>
     <!-- Segment snippet -->
     <script>
