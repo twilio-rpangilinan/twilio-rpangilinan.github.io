@@ -192,5 +192,14 @@
         }}}});
     }*/
 </script>
+<script>
+    analytics.on('track', function(event, properties, options {
+        console.log("On Track");
+    });
+
+    analytics.on('identify', function(event, properties, options {
+        console.log("On Identify");
+    });
+</script>
 </body> 
 </html>
