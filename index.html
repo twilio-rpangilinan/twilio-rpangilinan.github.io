@@ -36,11 +36,7 @@
     </script>
 </head> 
 <body style="background-color:darkseagreen; margin: 10px; text-align:center;"> 
-<script>
-    var optimizelyClientInstance = optimizelySdk.createInstance({
-        datafile: window.optimizelyDatafile,
-    });
-</script>    
+
 <h1>Form Submission</h1> 
 <form name="travel" onsubmit="identify(event)">
      What is your favorite travel destination?
@@ -203,4 +199,9 @@
     });
 </script>
 </body> 
+<script>
+    var optimizelyClientInstance = window.optimizelySdk.createInstance({
+        datafile: window.optimizelyDatafile,
+    });
+</script>    
 </html>
