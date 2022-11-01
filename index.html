@@ -13,11 +13,7 @@
     <!-- Optimizely -->
     <script src="scripts/require.js"></script>
     <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js"></script>
-    <script>
-        var optimizelyClient = window.optimizelySdk.createInstance({
-            sdkKey: '8i8Jv5NVAEVcGa8JnFJzH'
-        });
-    </script>
+
     <!-- Segment snippet -->
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="GI3L6Yfc6pZcez9Bg9aoulGetftkAb8v";;analytics.SNIPPET_VERSION="4.15.3";
@@ -205,13 +201,17 @@
 <pre id="experiences"></pre>
 <pre id="result"></pre>
 <script>
-        optimizelyClient.onReady().then(() => {
-      var errors = document.getElementById('errors');
-      if (!optimizelyClient.isValidInstance()) {
-        errors.innerText = 'Optimizely client invalid. Verify in Settings>Environments that you used the primary environment\'s SDK key';
+      var optimizelyClient = window.optimizelySdk.createInstance({
+        sdkKey: '8i8Jv5NVAEVcGa8JnFJzH'
+      });
+    
+      optimizelyClient.onReady().then(() => {
+        var errors = document.getElementById('errors');
+        if (!optimizelyClient.isValidInstance()) {
+            errors.innerText = 'Optimizely client invalid. Verify in Settings>Environments that you used the primary environment\'s SDK key';
 
-        return;
-      }
+            return;
+        }
 
       var experiences = document.getElementById('experiences');
       let hasOnFlags = false;
