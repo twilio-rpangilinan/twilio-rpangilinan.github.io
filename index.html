@@ -38,14 +38,14 @@
 </head> 
 <body style="background-color:darkseagreen; margin: 10px; text-align:center;"> 
 
-<h1>Form Submission</h1> 
+<h1>SNKRS Survey</h1> 
 <form name="travel" onsubmit="identify(event)">
-     What is your favorite travel destination?
+     What is your favorite Nike sneaker?
     <input name="destination" required="" size="60" type="text"/> 
     <br><br>
-    Number of times you have been there: <input name="frequency" size="30" type="number"/>
+    How many times a month do you purchase Nike sneakers?: <input name="frequency" size="30" type="number"/>
     <br><br><br> 
-    Any recommendations (cool things to do, places to visit or restaurants to eat)? 
+    Any other sneaker brands you own? 
     <br><br> 
     <textarea cols="81" name="details" required="" rows="5">
     </textarea> 
@@ -71,15 +71,15 @@
         var user = {
             email: email, 
             name: fullname, 
-            destination: destination, 
+            favorite_sneaker: destination, 
             details: details,
-            visits: number
+            purchases: number
         };
         analytics.identify(id, {
             email: email,
             name: fullname
         });
-        analytics.track('Destination Submitted', user, function() {
+        analytics.track('Favorite Sneaker Submitted', user, function() {
             window.location.href = "";
         });
       }
